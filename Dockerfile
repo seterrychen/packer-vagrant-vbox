@@ -23,5 +23,11 @@ RUN echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >
     wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | apt-key add - && \
     apt-get update && \
     apt-get install -y --no-install-recommends virtualbox-5.0 && \
-    apt-get clean all && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# install build tool for Virtualbox
+RUN apt-get update && \
+    apt-get install -y make gcc && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
