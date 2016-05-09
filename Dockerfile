@@ -28,6 +28,6 @@ RUN echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >
 
 # install build tool for Virtualbox
 RUN apt-get update && \
-    apt-get install -y make gcc && \
+    apt-get install -y make gcc git && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
